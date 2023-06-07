@@ -1,0 +1,5 @@
+name: PredatorPrison
+version: '${project.version}'
+main: be.danieljunek17.predatorprison.PredatorPrison
+author: danieljunek17
+api-version: 1.19
