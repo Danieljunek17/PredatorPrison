@@ -11,7 +11,11 @@ import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class PredatorPrison extends JavaPlugin {
-
+    /**
+     * The plugin instance
+     */
+    @Getter
+    private static PredatorPrison instance;
     Currency currencyModule = new Currency();
     PrivateMines privateMinesModule = new PrivateMines();
 
@@ -27,6 +31,7 @@ public final class PredatorPrison extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        instance = this;
         enableDatabase();
         loadTables();
 
@@ -42,11 +47,11 @@ public final class PredatorPrison extends JavaPlugin {
     }
 
     private void enableDatabase() {
-        final String host = "cayuga.bloom.host";
+        final String host = "65.108.224.216";
         final int port = 3306;
-        final String database = "s32649_prisondatabase";
-        final String username = "u32649_7y37wWLI2A";
-        final String password = "krsctJitLuHuhrf9t9TEgJMv";
+        final String database = "s3_prisontest";
+        final String username = "u3_1efv97K1jU";
+        final String password = "L3JrZLYmGxx!=8j@.tKdTkip";
 
         databaseConnection = new DatabaseConnection(host, port, database, username, password);
     }

@@ -7,6 +7,9 @@ import java.util.Optional;
 
 public class GridManager {
     public static Grid getGrid() {
+        if(PredatorPrison.getGridTable() == null) {
+            return null;
+        }
         Optional<Grid> optGrid = PredatorPrison.getGridTable().load();
         if(optGrid.isPresent()) {
             return optGrid.get();

@@ -16,7 +16,7 @@ public class User {
     private int gems;
     private int money;
     private int tokens;
-    private int privateMineID;
+    private Integer privateMineID;
 
     public User(UUID uuid) {
         this.uuid = uuid;

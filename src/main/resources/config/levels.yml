@@ -1,0 +1,17 @@
+levels:
+  1:
+    cobblestone: 100
+  2:
+    cobblestone: 60
+    stone: 40
+  3:
+    cobblestone: 10
+    stone: 80
+    stone_bricks: 10
+  4:
+    stone: 60
+    stone_bricks: 40
+  5:
+    stone: 30
+    stone_bricks: 50
+    chiseled_stone_bricks: 20

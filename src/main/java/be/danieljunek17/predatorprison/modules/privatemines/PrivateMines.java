@@ -3,7 +3,9 @@ package be.danieljunek17.predatorprison.modules.privatemines;
 import be.danieljunek17.predatorprison.modules.Module;
 import be.danieljunek17.predatorprison.modules.privatemines.generators.PMineGenerator;
 import be.danieljunek17.predatorprison.modules.privatemines.generators.WorldGenerator;
+import be.danieljunek17.predatorprison.modules.privatemines.managers.PrivateMineManager;
 import co.aikar.commands.PaperCommandManager;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.GameRule;
 import org.bukkit.World;
@@ -18,7 +20,11 @@ public class PrivateMines implements Module {
     World world;
     WorldGenerator worldGenerator = new WorldGenerator();
     PMineGenerator pMineGenerator = new PMineGenerator();
-    String worldName = "PrivateMines";
+
+    PrivateMineManager privateMineManager = new PrivateMineManager();
+
+    @Getter
+    private final String worldName = "PrivateMines";
 
     @Override
     public void enable(JavaPlugin plugin, PaperCommandManager manager) {
@@ -35,7 +41,7 @@ public class PrivateMines implements Module {
         } else {
             world = Bukkit.createWorld(new WorldCreator(worldName));
         }
-        manager.registerCommand(new Commands(plugin, pMineGenerator, world));
+        manager.registerCommand(new Commands(plugin, pMineGenerator, privateMineManager, world));
     }
 
     @Override
